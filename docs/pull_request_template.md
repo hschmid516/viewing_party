@@ -1,35 +1,23 @@
-____ Wrote Tests ____ Implemented ____ Reviewed
+## Test Coverage:
 
-Neccesary checkmarks:
+   - [ ] 100% test coverage
+   - [ ] Less than 100% test coverage
 
-    [] All Tests are Passing
+## Type of change
 
-    [] The code will run locally
+   - [ ] New feature
+   - [ ] Bug fix/refactor
 
-Type of change
+## Changes Made:
 
-    [] New feature
-    [] Bug Fix
+    - 
 
-Implements/Fixes:
+## To Do:
 
-    description: 
+    - 
 
-Check the correct boxes
+## Checklist:
 
-    [] This broke nothing
-    [] This broke some stuff
-    [] This broke everything
-
-Testing Changes
-
-    [] No Tests have been changed
-    [] Some Tests have been changed
-    [] All of the Tests have been changed(Please describe what in the world happened)
-
-Checklist:
-
-    [] My code has no unused/commented out code
-    [] I have reviewed my code
-    [] I have commented my code, particularly in hard-to-understand areas
-    [] I have fully tested my code
+   - [ ] My code has no unused/commented out code
+   - [ ] I have reviewed my code
+   - [ ] I have fully tested my code
