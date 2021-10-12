@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User do
-  it { has_many :friends}
-  it { has_many :guests}
-  it { has_many(:parties).through (:guests)}
+  it { should have_many(:friendships) }
+  it { should have_many(:guests) }
+  it { should have_many(:parties).through (:guests) }
 end
