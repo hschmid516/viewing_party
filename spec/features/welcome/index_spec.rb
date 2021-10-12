@@ -12,8 +12,8 @@ RSpec.describe 'Welcome#index' do
   end
 
   it "has a login link and form" do
-    fill_in :username, with: user.username
-    fill_in :password, with: user.password
+    fill_in :email, with: @us1.email
+    fill_in :password, with: @us1.password
 
     click_on "Log In"
 
