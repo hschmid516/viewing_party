@@ -6,4 +6,5 @@ Rails.application.routes.draw do
 
   resources :dashboard
   resources :users, only: [:new, :create]
+  resources :discover, only: :index
 end
