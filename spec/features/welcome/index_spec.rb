@@ -17,6 +17,6 @@ RSpec.describe 'Welcome#index' do
 
     click_on "Log In"
 
-    expect(current_path).to eq(dashboard_path)
+    expect(current_path).to eq(dashboard_index_path)
   end
 end
