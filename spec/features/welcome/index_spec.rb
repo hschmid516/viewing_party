@@ -25,4 +25,15 @@ RSpec.describe 'Welcome#index' do
 
     expect(current_path).to eq(registration_path)
   end
+
+  it "has a logout option" do
+    fill_in :email, with: @us1.email
+    fill_in :password, with: @us1.password
+
+    click_on "Log In"
+
+    click_on "Log Out"
+
+    expect(current_path).to eq(root_path)
+  end
 end
