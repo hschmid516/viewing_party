@@ -19,4 +19,21 @@ RSpec.describe 'Welcome#index' do
 
     expect(current_path).to eq(dashboard_index_path)
   end
+
+  it "has a registration link" do
+    click_on "Are you already registered? Login here"
+
+    expect(current_path).to eq(registration_path)
+  end
+
+  it "has a logout option" do
+    fill_in :email, with: @us1.email
+    fill_in :password, with: @us1.password
+
+    click_on "Log In"
+
+    click_on "Log Out"
+
+    expect(current_path).to eq(root_path)
+  end
 end
