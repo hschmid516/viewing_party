@@ -10,7 +10,6 @@ class DashboardController < ApplicationController
 
   def index
     @friends = current_user.friends
-require "pry"; binding.pry
     if params[:search]
       new_friend = User.find_by(email: params[:search])
       current_user.friendships.create(friend: new_friend)
