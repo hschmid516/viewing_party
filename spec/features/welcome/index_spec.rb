@@ -19,4 +19,10 @@ RSpec.describe 'Welcome#index' do
 
     expect(current_path).to eq(dashboard_index_path)
   end
+
+  it "has a registration link" do
+    click_on "Are you already registered? Login here"
+
+    expect(current_path).to eq(registration_path)
+  end
 end
