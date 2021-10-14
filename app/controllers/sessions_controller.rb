@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
-
+  skip_before_action :require_user
+  
   def new
   end
 
@@ -11,7 +12,7 @@ class SessionsController < ApplicationController
       redirect_to dashboard_index_path
     else
       flash[:error] = "Sorry, your credentials are bad. Pitter Patter let's get at er"
-      render :new
+      redirect_to root_path
     end
   end
 

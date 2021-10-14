@@ -1,16 +1,20 @@
 <%= button_to 'Discover Movies', discover_index_path, method: :get %>
 
 <h2>Friends</h2>
-  <% @friends.each do |friend| %>
-    <%= friend.name %>
+  <% if !@user.friends.empty? %>
+    <% @user.friends.each do |friend| %>
+      <%= friend.name %>
+    <% end %>
+  <% else %>
+    You currently have zero friends
   <% end %>
-  
+
 <h2>Viewing Parties</h2>
 
 <%= link_to "Log Out", logout_path %>
 
-<%= form_with url: dashboard_index_path, method: :get, local: true do |form| %>
-  <%= form.label :search, "Email:" %>
-  <%= form.text_field :search %>
+<%= form_with url: friendships_path, method: :post, local: true do |form| %>
+  <%= form.label :email, "Email:" %>
+  <%= form.text_field :email %>
   <%= form.submit "Add Friend" %>
 <% end %>
