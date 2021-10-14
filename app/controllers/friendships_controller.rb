@@ -3,7 +3,6 @@ class FriendshipsController < ApplicationController
     friend = User.find_by(email: params[:email])
     if friend
       current_user.friendships.create(friend: friend)
-      current_user.reload
     else
       flash[:error] = "Your 'friend' gave you the wrong email...try again"
     end
