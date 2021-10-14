@@ -20,12 +20,17 @@ RSpec.describe 'Welcome#index' do
     expect(current_path).to eq(dashboard_index_path)
   end
 
-  it 'shows error if credentials are incorrect' do
+  it 'shows error if credentials are incorrect or incomplete' do
     click_on "Log In"
 
     expect(current_path).to eq(root_path)
     expect(page).to have_content("Sorry, your credentials are bad. Pitter Patter let's get at er")
 
+    fill_in :email, with: @us1.email
+    fill_in :password, with: 'wrongpassword'
+
+    expect(current_path).to eq(root_path)
+    expect(page).to have_content("Sorry, your credentials are bad. Pitter Patter let's get at er")
   end
 
   it "has a registration link" do
@@ -39,7 +44,6 @@ RSpec.describe 'Welcome#index' do
     fill_in :password, with: @us1.password
 
     click_on "Log In"
-
     click_on "Log Out"
 
     expect(current_path).to eq(root_path)
