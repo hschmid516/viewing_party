@@ -40,7 +40,48 @@ RSpec.describe 'Dashboard' do
     end
 
     it 'has a viewing parties section' do
+      party1 = create(:party)
+      party2 = create(:party)
+      @user1.friendships.create(friend: @user2)
+      @user1.friendships.create(friend: @user3)
+
+      party1.guests.create(user: @user1, host: true)
+      party1.guests.create(user: @user2, host: false)
+      party1.guests.create(user: @user3, host: false)
+
+      party2.guests.create(user: @user1, host: false)
+      party2.guests.create(user: @user2, host: true)
+      party2.guests.create(user: @user3, host: false)
+      @user1.reload
+      visit dashboard_index_path
+
       expect(page).to have_content('Viewing Parties')
+
+      within("#party-#{party1.id}") do
+        expect(page).to have_content(party1.duration)
+        expect(page).to have_content(party1.day)
+        expect(page).to have_content(party1.time)
+        expect(page).to have_content(party1.title)
+        expect(page).to have_content("Host: #{@user1.name}")
+        within("#invited") do
+          expect(page).to have_content(@user2.name)
+          expect(page).to have_content(@user3.name)
+        end
+      end
+
+      within("#party-#{party2.id}") do
+        save_and_open_page
+        expect(page).to have_content(party2.duration)
+        expect(page).to have_content(party2.day)
+        expect(page).to have_content(party2.time)
+        expect(page).to have_content(party2.title)
+        expect(page).to have_content("Host: #{@user2.name}")
+        within("#invited") do
+          expect(page).to have_content(@user1.name)
+          expect(html).to include("<b>#{@user1.name}</b>")
+          expect(page).to have_content(@user3.name)
+        end
+      end
     end
   end
 
@@ -54,3 +95,6 @@ RSpec.describe 'Dashboard' do
     end
   end
 end
+
+
+# save_and_open_page
