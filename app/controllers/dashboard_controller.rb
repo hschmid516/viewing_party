@@ -9,11 +9,6 @@ class DashboardController < ApplicationController
   end
 
   def index
-    @friends = current_user.friends
-    if params[:search]
-      new_friend = User.find_by(email: params[:search])
-      current_user.friendships.create(friend: new_friend)
-      redirect_to dashboard_index_path
-    end
+    @user = current_user
   end
 end
