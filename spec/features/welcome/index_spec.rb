@@ -20,6 +20,14 @@ RSpec.describe 'Welcome#index' do
     expect(current_path).to eq(dashboard_index_path)
   end
 
+  it 'shows error if credentials are incorrect' do
+    click_on "Log In"
+
+    expect(current_path).to eq(root_path)
+    expect(page).to have_content("Sorry, your credentials are bad. Pitter Patter let's get at er")
+
+  end
+
   it "has a registration link" do
     click_on "Are you already registered? Login here"
 
