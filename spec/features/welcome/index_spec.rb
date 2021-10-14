@@ -34,7 +34,7 @@ RSpec.describe 'Welcome#index' do
   end
 
   it "has a registration link" do
-    click_on "Are you already registered? Login here"
+    click_on "New to Viewing Party? Register Here"
 
     expect(current_path).to eq(registration_path)
   end
