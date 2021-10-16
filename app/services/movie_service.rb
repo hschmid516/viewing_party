@@ -32,5 +32,9 @@ class MovieService
     def search_by_title(search, page)
       get_data("#{BASE_URL}/search/movie?api_key=#{ENV['API_KEY']}&language=en-US&page=#{page}&include_adult=false&query=#{search}")[:results]
     end
+
+    def details(movie_id)
+      get_data("#{BASE_URL}/movie/#{movie_id}?api_key=#{ENV['API_KEY']}&language=en-US")
+    end
   end
 end
