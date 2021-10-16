@@ -25,4 +25,20 @@ RSpec.describe 'movie index page' do
       expect(page).to have_content(movies.last.vote_average)
     end
   end
+
+  scenario 'it has a search by movie title button' do
+    VCR.use_cassette('title_search') do
+      movie_data = MovieService.top_40_searched('The Godfather')
+      movies = movie_data.map do |movie_info|
+        Movie.new(movie_info)
+      end
+      fill_in :search, with: 'The Godfather'
+
+      click_on 'Search Movies'
+
+      expect(current_path).to eq(movies_path)
+      expect(page).to have_content('The Godfather')
+      expect(movies.length).to eq(40)
+    end
+  end
 end
