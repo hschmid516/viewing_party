@@ -4,6 +4,7 @@ RSpec.describe 'movie index page' do
   before :each do
     @user = create(:user)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+    visit movies_path
   end
 
   scenario 'it has a top 40 movie button' do
@@ -13,7 +14,7 @@ RSpec.describe 'movie index page' do
         Movie.new(movie_info)
       end
 
-      visit discover_index_path
+
       click_on 'Find Top Rated Movies'
 
       expect(current_path).to eq(movies_path)
