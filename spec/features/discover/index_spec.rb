@@ -9,19 +9,10 @@ RSpec.describe 'discover index page' do
 
   scenario 'it has a top 40 movie button' do
     VCR.use_cassette('top_40_movies') do
-      movie_data = MovieService.top_40
-      movies = movie_data.map do |movie_info|
-        Movie.new(movie_info)
-      end
 
       click_on 'Find Top Rated Movies'
 
       expect(current_path).to eq(movies_path)
-      expect(movies.length).to eq(40)
-      expect(page).to have_content(movies.first.title)
-      expect(page).to have_content(movies.first.vote_average)
-      expect(page).to have_content(movies.last.title)
-      expect(page).to have_content(movies.last.vote_average)
     end
   end
 end
