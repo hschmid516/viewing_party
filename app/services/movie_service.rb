@@ -12,6 +12,7 @@ class MovieService
       top_rated(1) + top_rated(2)
     end
 
+
     def top_rated(page)
       get_data("#{BASE_URL}/movie/top_rated?api_key=#{ENV['API_KEY']}&language=en-US&page=#{page}")[:results]
     end
@@ -22,6 +23,14 @@ class MovieService
 
     def movie_cast(movie_id)
       get_data("#{BASE_URL}/movie/#{movie_id}/credits?api_key=#{ENV['API_KEY']}&language=en-US")
+    end
+
+    def top_40_searched(search)
+      search_by_title(search, 1) + search_by_title(search, 2)
+    end
+
+    def search_by_title(search, page)
+      get_data("#{BASE_URL}/search/movie?api_key=#{ENV['API_KEY']}&language=en-US&page=#{page}&include_adult=false&query=#{search}")[:results]
     end
   end
 end
