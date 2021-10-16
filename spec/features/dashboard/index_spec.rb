@@ -70,7 +70,6 @@ RSpec.describe 'Dashboard' do
       end
 
       within("#party-#{party2.id}") do
-        save_and_open_page
         expect(page).to have_content(party2.duration)
         expect(page).to have_content(party2.day)
         expect(page).to have_content(party2.time)
