@@ -1,4 +1,6 @@
-<% @movies.each do |movie| %>
+<%= button_to "Find Top Rated Movies", movies_path, method: :get, params: {top_rated: true}  %>
+
+<% @movies&.each do |movie| %>
   <ul>
     <li><%= movie.title %> - Vote Average: <%= movie.vote_average %></li>
   </ul>
