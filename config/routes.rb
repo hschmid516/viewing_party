@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :dashboard
   resources :users, only: [:new, :create]
   resources :discover, only: :index
-  resources :movies, only: :index
+  resources :movies, only: [:index, :show]
   resources :friendships, only: :create
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'

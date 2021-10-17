@@ -1,5 +1,14 @@
-<% @movies.each do |movie| %>
+<%= button_to "Find Top Rated Movies", movies_path, method: :get, params: {top_rated: true}  %>
+
+<% @movies&.each do |movie| %>
   <ul>
     <li><%= movie.title %> - Vote Average: <%= movie.vote_average %></li>
   </ul>
   <% end %>
+
+
+<%= form_with url: movies_path, method: :get, local: true do |form| %>
+  <%= form.label :search, "Title:" %>
+  <%= form.text_field :search %>
+  <%= form.submit "Search Movies" %>
+<% end %>
