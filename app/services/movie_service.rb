@@ -17,11 +17,11 @@ class MovieService
       get_data("#{BASE_URL}/movie/top_rated?api_key=#{ENV['API_KEY']}&language=en-US&page=#{page}")[:results]
     end
 
-    def movie_reviews(movie_id)
-      get_data("#{BASE_URL}/movie/{movie_id}/reviews?api_key=#{ENV['API_KEY']}&language=en-US&page=1")
+    def reviews(movie_id)
+      get_data("#{BASE_URL}/movie/#{movie_id}/reviews?api_key=#{ENV['API_KEY']}&language=en-US&page=1")
     end
 
-    def movie_cast(movie_id)
+    def cast(movie_id)
       get_data("#{BASE_URL}/movie/#{movie_id}/credits?api_key=#{ENV['API_KEY']}&language=en-US")
     end
 
