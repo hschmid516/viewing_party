@@ -1,6 +1,6 @@
 class MovieService
   class << self
-    BASE_URL = ' https://api.themoviedb.org/3 '
+    BASE_URL = 'https://api.themoviedb.org/3'
 
     def get_data(endpoint)
       response = Faraday.get(endpoint)
