@@ -9,7 +9,7 @@ RSpec.describe 'movie index page' do
 
   scenario 'it has a top 40 movie button' do
     VCR.use_cassette('top_40_movies') do
-      movie_data = MovieService.top_40
+      movie_data = MovieService.top40
       movies = movie_data.map do |movie_info|
         Movie.new(movie_info)
       end
