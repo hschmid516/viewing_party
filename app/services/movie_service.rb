@@ -1,6 +1,6 @@
 class MovieService
   class << self
-    BASE_URL = "https://api.themoviedb.org/3"
+    BASE_URL = 'https://api.themoviedb.org/3'
 
     def get_data(endpoint)
       response = Faraday.get(endpoint)
@@ -8,7 +8,7 @@ class MovieService
       JSON.parse(data, symbolize_names: true)
     end
 
-    def top_40
+    def top40
       top_rated(1) + top_rated(2)
     end
 
