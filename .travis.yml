@@ -14,3 +14,6 @@ deploy:
   on:
     branch: main
   run: rails db:migrate
+env:
+  global:
+    - API_KEY: "5cd82cd9b942d566b653cf04d3440211"
