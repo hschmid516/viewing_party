@@ -31,6 +31,8 @@ RSpec.describe 'Movies#show' do
         expect(page).to have_content(character)
       end
 
+      expect(movie.cast.length).to eq(10)
+
       movie.reviews.each do |author, review|
         expect(page).to have_content(author)
         expect(page).to have_content(review.tr("\n", ' '))
