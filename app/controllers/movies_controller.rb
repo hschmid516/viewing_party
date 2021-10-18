@@ -15,6 +15,9 @@ class MoviesController < ApplicationController
   end
 
   def show
-    
+    details = MovieService.details(params[:id])
+    cast = MovieService.cast(params[:id])
+    reviews = MovieService.reviews(params[:id])
+    @movie = MovieDetails.new(details, cast, reviews)
   end
 end
