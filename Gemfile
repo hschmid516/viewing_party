@@ -19,6 +19,7 @@ gem 'faker'
 gem 'factory_bot_rails'
 gem 'bcrypt', '~> 3.1.7'
 gem 'figaro'
+gem 'rubocop'
 
 group :development, :test do
   gem 'pry'
