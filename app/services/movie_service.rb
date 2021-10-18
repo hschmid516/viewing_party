@@ -8,10 +8,9 @@ class MovieService
       JSON.parse(data, symbolize_names: true)
     end
 
-    def top_40
+    def top_movies
       top_rated(1) + top_rated(2)
     end
-
 
     def top_rated(page)
       get_data("#{BASE_URL}/movie/top_rated?api_key=#{ENV['API_KEY']}&language=en-US&page=#{page}")[:results]
@@ -25,7 +24,7 @@ class MovieService
       get_data("#{BASE_URL}/movie/#{movie_id}/credits?api_key=#{ENV['API_KEY']}&language=en-US")
     end
 
-    def top_40_searched(search)
+    def search_results(search)
       search_by_title(search, 1) + search_by_title(search, 2)
     end
 
