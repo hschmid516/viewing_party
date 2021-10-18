@@ -37,4 +37,20 @@ RSpec.describe 'Movies#show' do
       end
     end
   end
+
+  scenario 'it has button for creating party' do
+    VCR.use_cassette('new_party') do
+      details = MovieService.details(17473)
+      cast = MovieService.cast(17473)
+      reviews = MovieService.reviews(17473)
+
+      movie = MovieDetails.new(details, cast, reviews)
+
+      visit movie_path(movie.id)
+
+      click_button "Create Viewing Party for movie"
+
+      expect(current_path).to eq(new_party_path)
+    end
+  end
 end
