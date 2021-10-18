@@ -15,7 +15,7 @@ class MovieDetails
     @title = details[:title]
     @vote_average = details[:vote_average]
     @run_time = details[:run_time]
-    @genres = details[:genres].map {|genre| genre[:name]}
+    @genres = details[:genres].map { |genre| genre[:name] }
     @summary = details[:overview]
     @cast = cast[:cast]
     @total_reviews = reviews[:total_reviews]
