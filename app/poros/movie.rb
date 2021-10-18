@@ -3,7 +3,7 @@ class Movie
   attr_reader :id,
               :title,
               :vote_average
-              # :run_time,
+              # :runtime,
               # :genres,
               # :summary,
               # :cast,
@@ -14,7 +14,7 @@ class Movie
     @id = info[:id]
     @title = info[:title]
     @vote_average = info[:vote_average]
-    # @run_time = info[:]
+    # @runtime = info[:]
     # @genres = info[:]
     # @summary = info[:]
     # @cast = info[:]
