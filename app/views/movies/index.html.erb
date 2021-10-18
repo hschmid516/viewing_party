@@ -2,7 +2,7 @@
 
 <% @movies&.each do |movie| %>
   <ul>
-    <li><%=link_to movie.title movie_path(movie.id) %> - Vote Average: <%= movie.vote_average %></li>
+    <li><%=link_to movie.title, movie_path(movie.id) %> - Vote Average: <%= movie.vote_average %></li>
   </ul>
   <% end %>
 
