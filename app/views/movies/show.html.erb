@@ -1,4 +1,7 @@
 <h1><%= @movie.title %></h1>
+
+<%= button_to "Create Viewing Party for movie", new_party_path, method: :get %>
+
 <p>Vote Average: <%= @movie.vote_average %></p>
 <p>Runtime: <%= @movie.runtime %> minutes</p>
 <p>Genre(s): </p>
