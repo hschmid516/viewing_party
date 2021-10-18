@@ -1,0 +1,119 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/17473/credits?api_key=<API_KEY>&language=en-US
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 18 Oct 2021 21:35:25 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 6b8f7531af4bda175213db2a5c7fc905d783b56e
+      X-Memc-Age:
+      - '12533'
+      X-Memc-Expires:
+      - '3428'
+      Etag:
+      - W/"2b444e910eba7c3e76db13f352e8dddf"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 18b6696ca42addba6911206e2172f1b0.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DFW55-C3
+      X-Amz-Cf-Id:
+      - zjB7opPxMkuvp7VtIwa07k2eEoHZLnNq21sxCBp7_jHWOpApFqZyMw==
+      Age:
+      - '1946'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":17473,"cast":[{"adult":false,"gender":2,"id":81916,"known_for_department":"Acting","name":"Tommy
+        Wiseau","original_name":"Tommy Wiseau","popularity":2.757,"profile_path":"/mDiPtAoCFOM2NoHI0Jx1Zh2t5rV.jpg","cast_id":1,"character":"Johnny","credit_id":"52fe47299251416c7508fb21","order":0},{"adult":false,"gender":1,"id":81917,"known_for_department":"Acting","name":"Juliette
+        Danielle","original_name":"Juliette Danielle","popularity":1.304,"profile_path":"/4dU5buOHyl02zERuJfrVFherRTr.jpg","cast_id":2,"character":"Lisa","credit_id":"52fe47299251416c7508fb25","order":1},{"adult":false,"gender":2,"id":81918,"known_for_department":"Acting","name":"Greg
+        Sestero","original_name":"Greg Sestero","popularity":1.104,"profile_path":"/ySLUoDUVQB1IjgsaX9ktPaz58Rh.jpg","cast_id":3,"character":"Mark","credit_id":"52fe47299251416c7508fb29","order":2},{"adult":false,"gender":0,"id":81919,"known_for_department":"Acting","name":"Philip
+        Haldiman","original_name":"Philip Haldiman","popularity":0.75,"profile_path":"/sNJdUfzX8cryH1rnkez2MVacP10.jpg","cast_id":4,"character":"Denny","credit_id":"52fe47299251416c7508fb2d","order":3},{"adult":false,"gender":0,"id":81920,"known_for_department":"Acting","name":"Carolyn
+        Minnott","original_name":"Carolyn Minnott","popularity":2.571,"profile_path":"/dXUkYx7lgClH1sO5Sr6o7lYfo3z.jpg","cast_id":5,"character":"Claudette","credit_id":"52fe47299251416c7508fb31","order":4},{"adult":false,"gender":0,"id":81921,"known_for_department":"Acting","name":"Robyn
+        Paris","original_name":"Robyn Paris","popularity":0.6,"profile_path":null,"cast_id":6,"character":"Michelle","credit_id":"52fe47299251416c7508fb35","order":5},{"adult":false,"gender":2,"id":81925,"known_for_department":"Acting","name":"Dan
+        Janjigian","original_name":"Dan Janjigian","popularity":0.98,"profile_path":"/wSPOQIx1MF3Cabk6v8CgZAuB9XJ.jpg","cast_id":10,"character":"Chris
+        R","credit_id":"52fe47299251416c7508fb45","order":7},{"adult":false,"gender":0,"id":81923,"known_for_department":"Acting","name":"Kyle
+        Vogt","original_name":"Kyle Vogt","popularity":0.6,"profile_path":null,"cast_id":8,"character":"Peter","credit_id":"52fe47299251416c7508fb3d","order":8},{"adult":false,"gender":0,"id":81924,"known_for_department":"Acting","name":"Greg
+        Ellery","original_name":"Greg Ellery","popularity":0.6,"profile_path":null,"cast_id":9,"character":"Steven","credit_id":"52fe47299251416c7508fb41","order":9},{"adult":false,"gender":0,"id":81922,"known_for_department":"Acting","name":"Mike
+        Holmes","original_name":"Mike Holmes","popularity":0.6,"profile_path":null,"cast_id":23,"character":"Mike","credit_id":"5acd3f77c3a36834de08c956","order":10}],"crew":[{"adult":false,"gender":2,"id":81916,"known_for_department":"Acting","name":"Tommy
+        Wiseau","original_name":"Tommy Wiseau","popularity":2.757,"profile_path":"/mDiPtAoCFOM2NoHI0Jx1Zh2t5rV.jpg","credit_id":"52fe47299251416c7508fb4b","department":"Directing","job":"Director"},{"adult":false,"gender":2,"id":81916,"known_for_department":"Acting","name":"Tommy
+        Wiseau","original_name":"Tommy Wiseau","popularity":2.757,"profile_path":"/mDiPtAoCFOM2NoHI0Jx1Zh2t5rV.jpg","credit_id":"539a507ac3a3684b5e0005f8","department":"Production","job":"Producer"},{"adult":false,"gender":2,"id":81916,"known_for_department":"Acting","name":"Tommy
+        Wiseau","original_name":"Tommy Wiseau","popularity":2.757,"profile_path":"/mDiPtAoCFOM2NoHI0Jx1Zh2t5rV.jpg","credit_id":"539a5081c3a3684b86000586","department":"Production","job":"Executive
+        Producer"},{"adult":false,"gender":2,"id":81916,"known_for_department":"Acting","name":"Tommy
+        Wiseau","original_name":"Tommy Wiseau","popularity":2.757,"profile_path":"/mDiPtAoCFOM2NoHI0Jx1Zh2t5rV.jpg","credit_id":"539a506dc3a3684b86000582","department":"Writing","job":"Writer"},{"adult":false,"gender":2,"id":91087,"known_for_department":"Sound","name":"Stanley
+        Kastner","original_name":"Stanley Kastner","popularity":0.6,"profile_path":null,"credit_id":"60db3e1217c443005e847057","department":"Sound","job":"Sound
+        Re-Recording Mixer"},{"adult":false,"gender":0,"id":164890,"known_for_department":"Editing","name":"Eric
+        Chase","original_name":"Eric Chase","popularity":0.6,"profile_path":null,"credit_id":"539a51260e0a260fba0007ba","department":"Editing","job":"Editor"},{"adult":false,"gender":0,"id":164890,"known_for_department":"Editing","name":"Eric
+        Chase","original_name":"Eric Chase","popularity":0.6,"profile_path":null,"credit_id":"60db3dcadbf14400468a652d","department":"Sound","job":"Sound
+        Designer"},{"adult":false,"gender":2,"id":1085780,"known_for_department":"Camera","name":"Todd
+        Barron","original_name":"Todd Barron","popularity":0.6,"profile_path":null,"credit_id":"539a510b0e0a260fb0000810","department":"Camera","job":"Director
+        of Photography"},{"adult":false,"gender":0,"id":1330242,"known_for_department":"Production","name":"Drew
+        Caffrey","original_name":"Drew Caffrey","popularity":0.6,"profile_path":null,"credit_id":"539a5094c3a3684b950005d0","department":"Production","job":"Executive
+        Producer"},{"adult":false,"gender":0,"id":1330243,"known_for_department":"Production","name":"Chloe
+        Lietzke","original_name":"Chloe Lietzke","popularity":0.6,"profile_path":null,"credit_id":"539a50ed0e0a260fa80007ed","department":"Production","job":"Executive
+        Producer"},{"adult":false,"gender":0,"id":1330243,"known_for_department":"Production","name":"Chloe
+        Lietzke","original_name":"Chloe Lietzke","popularity":0.6,"profile_path":null,"credit_id":"539a51330e0a260fb000081c","department":"Production","job":"Casting"},{"adult":false,"gender":0,"id":1330244,"known_for_department":"Sound","name":"Mladen
+        Milicevic","original_name":"Mladen Milicevic","popularity":0.6,"profile_path":null,"credit_id":"539a50fd0e0a260fab0007f5","department":"Sound","job":"Original
+        Music Composer"},{"adult":false,"gender":0,"id":1392971,"known_for_department":"Crew","name":"Matt
+        von Brock","original_name":"Matt von Brock","popularity":0.6,"profile_path":null,"credit_id":"60db3e5325b955005d045da8","department":"Visual
+        Effects","job":"Visual Effects Supervisor"},{"adult":false,"gender":0,"id":1401289,"known_for_department":"Sound","name":"Donald
+        Lyles","original_name":"Donald Lyles","popularity":0.6,"profile_path":null,"credit_id":"60db3e232716710021a6207c","department":"Sound","job":"Sound
+        Recordist"},{"adult":false,"gender":2,"id":1416895,"known_for_department":"Editing","name":"Troy
+        Allen","original_name":"Troy Allen","popularity":0.6,"profile_path":null,"credit_id":"60db3dad880551002d1e1d4c","department":"Sound","job":"Foley
+        Artist"},{"adult":false,"gender":0,"id":1587110,"known_for_department":"Sound","name":"Zsolt
+        Magyar","original_name":"Zsolt Magyar","popularity":0.6,"profile_path":null,"credit_id":"60db3dd725b9550073b1233b","department":"Sound","job":"Sound"},{"adult":false,"gender":0,"id":1620723,"known_for_department":"Costume
+        & Make-Up","name":"Safowa Bright-Asare","original_name":"Safowa Bright-Asare","popularity":1.38,"profile_path":null,"credit_id":"60db3d6c3fe1600045a2e09a","department":"Costume
+        & Make-Up","job":"Costume Design"},{"adult":false,"gender":2,"id":2003292,"known_for_department":"Camera","name":"Joseph
+        M. Setele","original_name":"Joseph M. Setele","popularity":0.6,"profile_path":null,"credit_id":"5ab13c4192514111c700ed08","department":"Camera","job":"Camera
+        Operator"},{"adult":false,"gender":0,"id":3140737,"known_for_department":"Art","name":"Mercedes
+        Younger","original_name":"Mercedes Younger","popularity":0.6,"profile_path":null,"credit_id":"60db3d4c3fe160007d053881","department":"Art","job":"Production
+        Design"},{"adult":false,"gender":0,"id":3140738,"known_for_department":"Art","name":"Kendra
+        Hollaway","original_name":"Kendra Hollaway","popularity":0.6,"profile_path":null,"credit_id":"60db3d5c2716710076499004","department":"Art","job":"Art
+        Direction"},{"adult":false,"gender":0,"id":3140739,"known_for_department":"Costume
+        & Make-Up","name":"Persia Matine","original_name":"Persia Matine","popularity":0.6,"profile_path":null,"credit_id":"60db3d88b3390300751bbbfb","department":"Costume
+        & Make-Up","job":"Makeup & Hair"},{"adult":false,"gender":0,"id":3140740,"known_for_department":"Costume
+        & Make-Up","name":"Amy Von Brock","original_name":"Amy Von Brock","popularity":0.6,"profile_path":null,"credit_id":"60db3d930b7316007d1edd77","department":"Costume
+        & Make-Up","job":"Key Makeup Artist"},{"adult":false,"gender":0,"id":3140741,"known_for_department":"Sound","name":"Charles
+        D. Ballard","original_name":"Charles D. Ballard","popularity":0.6,"profile_path":null,"credit_id":"60db3dbb3fe160007d05399a","department":"Sound","job":"Sound
+        Effects"},{"adult":false,"gender":0,"id":3140742,"known_for_department":"Sound","name":"Richard
+        Zimmerman","original_name":"Richard Zimmerman","popularity":0.6,"profile_path":null,"credit_id":"60db3e010e5aba00297079af","department":"Sound","job":"Dialogue
+        Editor"}]}'
+  recorded_at: Mon, 18 Oct 2021 22:07:51 GMT
+recorded_with: VCR 6.0.0

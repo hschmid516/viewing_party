@@ -1,4 +1,4 @@
-class MovieDetails
+class MovieDetail
   attr_reader :id,
               :title,
               :vote_average,
