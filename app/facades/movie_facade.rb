@@ -1,3 +1,2 @@
 class MovieFacade
-
 end

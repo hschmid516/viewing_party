@@ -5,7 +5,7 @@ class User < ApplicationRecord
   has_many :friends, through: :friendships
 
   validates :email, uniqueness: true, presence: true
-  validates_presence_of :password, require: true
+  validates :password, presence: true
 
   has_secure_password
 end
