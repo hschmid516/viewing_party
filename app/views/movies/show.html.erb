@@ -14,7 +14,7 @@
   <p><%= @movie.summary %></p>
 <h3>Cast</h3>
   <ul>
-    <% @movie.cast.each do |actor, character| %>
+    <% @movie.cast[0..10].each do |actor, character| %>
       <li><%= actor %> as <%= character %></li>
     <% end %>
   </ul>
