@@ -45,7 +45,7 @@ RSpec.describe 'Movies#show', :vcr do
 
     visit movie_path(movie.id)
 
-    click_button "Create Viewing Party for movie"
+    click_button "Create Viewing Party for Movie"
 
     expect(current_path).to eq(new_party_path)
   end
