@@ -4,7 +4,7 @@
   <%= f.label :title, 'Movie Title' %>
   <%= f.text_field :title, value: @movie.title, readonly: true %>
   <%= f.label :duration, 'Duration'  %>
-  <%= f.text_field :duration %>
+  <%= f.number_field :duration, value: @movie.runtime, min: @movie.runtime %>
   <%= f.label :day, 'Day' %>
   <%= f.date_field :day %>
   <%= f.label :time, 'Time' %>
