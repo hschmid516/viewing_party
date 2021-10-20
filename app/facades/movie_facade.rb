@@ -26,5 +26,13 @@ class MovieFacade
       movie_info = MovieService.backdrop(details[:imdb_id])
       Backdrop.new(movie_info).backdrop_path
     end
+
+    def recommendations(movie_id)
+      movies = MovieService.recommendations(movie_id)
+      movies.map do |movie|
+        details = MovieService.details(movie[:id])
+        Movie.new(details)
+      end
+    end
   end
 end
