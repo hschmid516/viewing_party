@@ -35,6 +35,14 @@
       </ul>
     </div>
     <div class="container">
+      <h3>Recommended Movies</h3>
+      <ul>
+        <% @recommendations[0..5].each do |movie| %>
+          <li><%= link_to movie.title, movie_path(movie.id) %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="container">
       <h3><%= @movie.total_reviews %>
         Reviews</h3>
       <% @movie.reviews.each do |author, review| %>
