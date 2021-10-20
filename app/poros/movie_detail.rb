@@ -14,13 +14,27 @@ class MovieDetail
     @title = details[:title]
     @vote_average = details[:vote_average]
     @runtime = details[:runtime]
-    @genres = details[:genres].map { |genre| genre[:name] }
+    @genre_info = details[:genres]
     @summary = details[:overview]
-    @cast = cast[:cast].each_with_object([]) do |person, acc|
+    @cast_info = cast[:cast]
+    @total_reviews = reviews[:total_results]
+    @review_data = reviews[:results]
+  end
+
+  def genres
+    @genre_info.map do |genre|
+      genre[:name]
+    end
+  end
+
+  def cast
+    @cast_info.each_with_object([]) do |person, acc|
       acc << [person[:name], person[:character]]
     end
-    @total_reviews = reviews[:total_results]
-    @reviews = reviews[:results].each_with_object([]) do |review, acc|
+  end
+
+  def reviews
+    @review_data.each_with_object([]) do |review, acc|
       acc << [review[:author],review[:content]]
     end
   end
