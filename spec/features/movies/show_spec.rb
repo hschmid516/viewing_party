@@ -40,4 +40,12 @@ RSpec.describe 'Movies#show', :vcr do
 
     expect(current_path).to eq(new_party_path)
   end
+
+  it 'shows recommended movies' do
+    expect(page).to have_content('The Disaster Artist')
+
+    click_link "The Disaster Artist"
+
+    expect(current_path).to eq(movie_path(371638))
+  end
 end
