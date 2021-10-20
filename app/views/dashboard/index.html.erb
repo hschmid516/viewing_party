@@ -1,52 +1,59 @@
 <%= link_to "Log Out", logout_path %><br>
-<h1>Welcome, <%= @user.name %>!</h1>
+<h1>Welcome,
+  <%= @user.name %>!</h1>
 
 <%= button_to 'Discover Movies', discover_index_path, method: :get %>
 
 <h2>Friends</h2>
-  <%= form_with url: friendships_path, method: :post, local: true do |form| %>
-  <%= form.label :email, "Email:" %>
-  <%= form.text_field :email %>
-  <%= form.submit "Add Friend" %>
-  <% end %>
+<%= form_with url: friendships_path, method: :post, local: true do |form| %>
+<%= form.label :email, "Email:" %>
+<%= form.text_field :email %>
+<%= form.submit "Add Friend" %>
+<% end %>
 
-  <% unless @user.friends.empty? %>
-  <ul>
-    <% @user.friends.each do |friend| %>
-      <li><%= friend.name %></li>
-    <% end %>
-  </ul>
-  <% else %>
-    You currently have zero friends
+<% unless @user.friends.empty? %>
+<ul>
+  <% @user.friends.each do |friend| %>
+    <li><%= friend.name %></li>
   <% end %>
+</ul>
+<% else %>
+You currently have zero friends
+<% end %>
 
 <h2>Viewing Parties</h2>
 <% @user.parties.each do |party| %>
-  <section id="party-<%= party.id %>">
-    <h3><%= party.title %></h3>
-    <ul>
-      <li>Date: <%= party.day %></li>
-      <li>Time: <%= party.time %></li>
-      <li>Duration: <%= party.duration %></li>
-      <li>Host: <%= party.find_host %></li>
-      <section id="invited">
-        <li>Friends:
-          <ul>
-            <% party.invited.each do |guest| %>
-              <% if @user.id == guest.user_id && !guest.host? %>
-                <li><b><%= guest.user.name %></b></li>
-              <% else %>
-                <li><%= guest.user.name %></li>
-              <% end %>
+<section id="party-<%= party.id %>">
+  <h3><%= party.title %></h3>
+  <ul>
+    <li>Date:
+      <%= party.day %></li>
+    <li>Time:
+      <%= party.time %></li>
+    <li>Duration:
+      <%= party.duration %></li>
+    <li>Host:
+      <%= party.find_host %></li>
+    <section id="invited">
+      <li>Friends:
+        <ul>
+          <% party.invited.each do |guest| %>
+            <% if @user.id == guest.user_id && !guest.host? %>
+              <li>
+                <b><%= guest.user.name %></b>
+              </li>
+            <% else %>
+              <li><%= guest.user.name %></li>
             <% end %>
-          </ul>
-        </li>
-        <% if @user.name == party.find_host %>
-          <h4>Hosting</h4>
-        <% else %>
-          <h4>Invited</h4>
-        <% end %>
-      </section>
-    </ul>
-  </section>
-  <% end %>
+          <% end %>
+        </ul>
+      </li>
+      <% if @user.name == party.find_host %>
+        <h4>Hosting</h4>
+      <% else %>
+        <h4>Invited</h4>
+      <% end %>
+    </section>
+  </ul>
+</section>
+<% end %>

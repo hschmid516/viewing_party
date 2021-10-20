@@ -22,9 +22,7 @@ class MovieDetail
   end
 
   def genres
-    @genre_info.map do |genre|
-      genre[:name]
-    end
+    @genre_info.pluck(:name)
   end
 
   def cast
@@ -35,7 +33,7 @@ class MovieDetail
 
   def reviews
     @review_data.each_with_object([]) do |review, acc|
-      acc << [review[:author],review[:content]]
+      acc << [review[:author], review[:content]]
     end
   end
 end
