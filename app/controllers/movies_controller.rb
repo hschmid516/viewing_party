@@ -7,7 +7,7 @@ class MoviesController < ApplicationController
         format.js
         format.json { render json: 'movies' }
       end
-    else
+    elsif params[:top_rated]
       @movies = MovieFacade.top_movies
       respond_to do |format|
         format.html

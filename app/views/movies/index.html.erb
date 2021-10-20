@@ -1,4 +1,4 @@
-<%= button_to "Find Top Rated Movies", movies_path, method: :get %><br>
+<%= button_to "Find Top Rated Movies", movies_path, method: :get, remote: true, params: { top_rated: true } %><br>
 
 <%= form_with url: movies_path, method: :get do |form| %>
 <%= form.text_field :search, placeholder: 'Find Movie by Name' %>

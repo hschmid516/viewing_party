@@ -1,5 +1,4 @@
 <% @movies&.each do |movie| %>
-<%# <% require 'pry'; binding.pry %> 
 <ul>
   <li><%=link_to movie.title, movie_path(movie.id) %>
     - Vote Average:
