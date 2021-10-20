@@ -22,6 +22,7 @@ gem 'figaro'
 gem 'rubocop'
 gem 'bootstrap', '~> 5.1.0'
 gem 'jquery-rails'
+gem 'mini_racer'
 
 group :development, :test do
   gem 'pry'
