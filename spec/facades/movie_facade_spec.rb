@@ -21,4 +21,11 @@ describe MovieFacade, :vcr do
     expect(movie).to be_a MovieDetail
     expect(movie.id).to eq(238)
   end
+
+  it '#recommendations returns suggested movies' do
+    movies = MovieFacade.recommendations(238)
+
+    expect(movies.first).to be_a Movie
+    expect(movies.first.id).to eq(240)
+  end
 end
