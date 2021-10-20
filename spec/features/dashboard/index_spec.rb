@@ -40,8 +40,8 @@ RSpec.describe 'Dashboard' do
     end
 
     it 'has a viewing parties section' do
-      party1 = create(:party)
-      party2 = create(:party)
+      party1 = create(:party, movie_id: 238)
+      party2 = create(:party, movie_id: 238)
       @user1.friendships.create(friend: @user2)
       @user1.friendships.create(friend: @user3)
 
