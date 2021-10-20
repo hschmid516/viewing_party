@@ -1,28 +1,36 @@
-<h1><%= @movie.title %></h1>
+<body class="movie_show">
+  <div class="show_text">
+    <h1><%= @movie.title %></h1><br>
+    <%= button_to "Create Viewing Party for Movie", new_party_path, method: :get, params: {movie_id: @movie.id}, class: 'button' %>
+    <div class="container">
+      <p><b>Vote Average: </b><%= @movie.vote_average %></p>
+      <p><b>Runtime: </b><%= @movie.runtime %> minutes</p>
+      <p><b>Genre(s): </b></p>
+      <ul>
+        <% @movie.genres.each do |genre| %>
+        <li><%= genre %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="container">
+      <h3>Summary</h3>
+      <p><%= @movie.summary %></p>
+    </div>
+    <div class="container">
+      <h3>Cast</h3>
+      <ul>
+        <% @movie.cast[0..10].each do |actor, character| %>
+        <li><%= actor %> as <%= character %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="container">
+      <h3><%= @movie.total_reviews %> Reviews</h3>
+        <% @movie.reviews.each do |author, review| %>
+        <b>Author: <%= author %></b><br>
+          <p><%= review %></p><br>
+        <% end %>
+    </div>
+  </div>
 
-<%= button_to "Create Viewing Party for Movie", new_party_path, method: :get, params: {movie_id: @movie.id}%>
-
-<p>Vote Average: <%= @movie.vote_average %></p>
-<p>Runtime: <%= @movie.runtime %> minutes</p>
-<p>Genre(s): </p>
-<ul>
-  <% @movie.genres.each do |genre| %>
-    <li><%= genre %></li>
-  <% end %>
-</ul>
-<h3>Summary</h3>
-  <p><%= @movie.summary %></p>
-<h3>Cast</h3>
-  <ul>
-    <% @movie.cast[0..10].each do |actor, character| %>
-      <li><%= actor %> as <%= character %></li>
-    <% end %>
-  </ul>
-<h3><%= @movie.total_reviews %> Reviews</h3>
-  <ul>
-    <% @movie.reviews.each do |author, review| %>
-      <li><b>Author: <%= author %></b><br>
-        <%= review %>
-      </li><br>
-    <% end %>
-  </ul>
+</body>
