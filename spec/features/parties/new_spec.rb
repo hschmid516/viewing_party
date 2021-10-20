@@ -18,7 +18,6 @@ RSpec.describe 'Parties#new', :vcr do
     expect(current_path).to eq(new_party_path)
     expect(page).to have_field('duration', with: '175')
 
-    fill_in :title, with: 'The Godfather'
     fill_in :duration, with: 500
     fill_in :day, with: '12/12/2021'
     fill_in :time, with: '07:15'
@@ -45,7 +44,6 @@ RSpec.describe 'Parties#new', :vcr do
   end
 
   it "shows error if fields are missing" do
-    fill_in :title, with: 'The Godfather'
     click_button 'Create Party'
 
     expect(current_path).to eq(new_party_path)
