@@ -43,5 +43,9 @@ class MovieService
     def backdrop(imdb_id)
       get_data("#{BASE_URL}/find/#{imdb_id}?external_source=imdb_id")[:movie_results].first
     end
+
+    def recommendations(movie_id)
+      get_data("#{BASE_URL}/movie/#{movie_id}/recommendations?page=1")[:results]
+    end
   end
 end
