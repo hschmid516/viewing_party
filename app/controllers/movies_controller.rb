@@ -20,5 +20,6 @@ class MoviesController < ApplicationController
   def show
     @movie = MovieFacade.movie_details(params[:id])
     @backdrop = MovieFacade.backdrop(@movie.id)
+    @recommendations = MovieFacade.recommendations(@movie.id)
   end
 end
