@@ -1,9 +1,13 @@
 class MovieService
   class << self
-    BASE_URL = 'https://api.themoviedb.org/3'
+    BASE_URL = 'https://api.themoviedb.org/3'.freeze
 
     def get_data(endpoint)
-      response = Faraday.get(endpoint)
+      response = Faraday.get(
+        endpoint,
+        { api_key: ENV['API_KEY'] },
+        { language: 'en-US' }
+      )
       data = response.body
       JSON.parse(data, symbolize_names: true)
     end
@@ -13,15 +17,15 @@ class MovieService
     end
 
     def top_rated(page)
-      get_data("#{BASE_URL}/movie/top_rated?api_key=#{ENV['API_KEY']}&language=en-US&page=#{page}")[:results]
+      get_data("#{BASE_URL}/movie/top_rated?page=#{page}")[:results]
     end
 
     def reviews(movie_id)
-      get_data("#{BASE_URL}/movie/#{movie_id}/reviews?api_key=#{ENV['API_KEY']}&language=en-US&page=1")
+      get_data("#{BASE_URL}/movie/#{movie_id}/reviews?page=1")
     end
 
     def cast(movie_id)
-      get_data("#{BASE_URL}/movie/#{movie_id}/credits?api_key=#{ENV['API_KEY']}&language=en-US")
+      get_data("#{BASE_URL}/movie/#{movie_id}/credits?")
     end
 
     def search_results(search)
@@ -29,15 +33,15 @@ class MovieService
     end
 
     def search_by_title(search, page)
-      get_data("#{BASE_URL}/search/movie?api_key=#{ENV['API_KEY']}&language=en-US&page=#{page}&include_adult=false&query=#{search}")[:results]
+      get_data("#{BASE_URL}/search/movie?&page=#{page}&include_adult=false&query=#{search}")[:results]
     end
 
     def details(movie_id)
-      get_data("#{BASE_URL}/movie/#{movie_id}?api_key=#{ENV['API_KEY']}&language=en-US")
+      get_data("#{BASE_URL}/movie/#{movie_id}")
     end
 
     def backdrop(imdb_id)
-      get_data("#{BASE_URL}/find/#{imdb_id}?api_key=#{ENV['API_KEY']}&language=en-US&external_source=imdb_id")[:movie_results].first
+      get_data("#{BASE_URL}/find/#{imdb_id}?external_source=imdb_id")[:movie_results].first
     end
   end
 end

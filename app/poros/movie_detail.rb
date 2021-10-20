@@ -3,11 +3,8 @@ class MovieDetail
               :title,
               :vote_average,
               :runtime,
-              :genres,
               :summary,
-              :cast,
-              :total_reviews,
-              :reviews
+              :total_reviews
 
   def initialize(details, cast, reviews)
     @id = details[:id]

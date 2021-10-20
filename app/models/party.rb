@@ -5,7 +5,7 @@ class Party < ApplicationRecord
   validates :duration, :day, :time, presence: true
 
   def find_host
-    guests.where(host: true).first.user.name
+    guests.find_by(host: true).user.name
   end
 
   def invited
