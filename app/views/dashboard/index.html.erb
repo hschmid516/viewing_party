@@ -35,19 +35,7 @@ You currently have zero friends
     <li>Host:
       <%= party.find_host %></li>
     <section id="invited">
-      <li>Friends:
-        <ul>
-          <% party.invited.each do |guest| %>
-            <% if @user.id == guest.user_id && !guest.host? %>
-              <li>
-                <b><%= guest.user.name %></b>
-              </li>
-            <% else %>
-              <li><%= guest.user.name %></li>
-            <% end %>
-          <% end %>
-        </ul>
-      </li>
+      <%= render partial: 'shared/party_friends', locals: {party: party} %>
       <% if @user.name == party.find_host %>
         <h4>Hosting</h4>
       <% else %>
