@@ -6,12 +6,27 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <style>
+      body.movie_show{
+        font-family: "Trebuchet MS";
+        text-align: center;
+        width: 100%;
+        margin: auto;
+        background-image: url("http://www.themoviedb.org/t/p/original<%= @backdrop %>");
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+          background-attachment: fixed;
+        height: 100vh;
+      }
+      </style>
   </head>
 
   <body>
     <main>
       <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, class: name %>
+        <%= content_tag :div, msg, class: "alert alert-#{name}" %>
       <% end %>
       <%= yield %>
     </main>

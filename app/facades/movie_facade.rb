@@ -20,5 +20,11 @@ class MovieFacade
       reviews = MovieService.reviews(movie_id)
       MovieDetail.new(details, cast, reviews)
     end
+
+    def backdrop(movie_id)
+      details = MovieService.details(movie_id)
+      movie_info = MovieService.backdrop(details[:imdb_id])
+      Backdrop.new(movie_info).backdrop_path
+    end
   end
 end

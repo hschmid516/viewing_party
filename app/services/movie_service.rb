@@ -35,5 +35,9 @@ class MovieService
     def details(movie_id)
       get_data("#{BASE_URL}/movie/#{movie_id}?api_key=#{ENV['API_KEY']}&language=en-US")
     end
+
+    def backdrop(imdb_id)
+      get_data("#{BASE_URL}/find/#{imdb_id}?api_key=#{ENV['API_KEY']}&language=en-US&external_source=imdb_id")[:movie_results].first
+    end
   end
 end
