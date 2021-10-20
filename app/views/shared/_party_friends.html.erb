@@ -1,0 +1,11 @@
+<li>Friends:
+  <ul>
+    <% party.invited.each do |guest| %>
+      <% if @user.id == guest.user_id && !guest.host? %>
+        <li>
+          <b><%= guest.user.name %></b>
+        </li>
+      <% else %>
+        <li><%= guest.user.name %></li>
+      <% end %>
+    <% end %>
