@@ -20,6 +20,8 @@ gem 'factory_bot_rails'
 gem 'bcrypt', '~> 3.1.7'
 gem 'figaro'
 gem 'rubocop'
+gem 'bootstrap', '~> 5.1.0'
+gem 'jquery-rails'
 
 group :development, :test do
   gem 'pry'
