@@ -24,7 +24,7 @@ You currently have zero friends
 <h2>Viewing Parties</h2>
 <% @user.parties.each do |party| %>
 <section id="party-<%= party.id %>">
-  <h3><%= party.title %></h3>
+  <h3><%= link_to party.title, movie_path(party.movie_id) %></h3>
   <ul>
     <li>Date:
       <%= party.day %></li>
