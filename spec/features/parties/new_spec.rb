@@ -27,7 +27,6 @@ RSpec.describe 'Parties#new', :vcr do
     click_button 'Create Party'
 
     expect(current_path).to eq(dashboard_index_path)
-
     expect(page).to have_content('The Godfather')
     expect(page).to have_content(500)
     expect(page).to have_content('12/12/21')
@@ -43,5 +42,13 @@ RSpec.describe 'Parties#new', :vcr do
     visit dashboard_index_path
 
     expect(page).to have_content('The Godfather')
+  end
+
+  it "shows error if fields are missing" do
+    fill_in :title, with: 'The Godfather'
+    click_button 'Create Party'
+
+    expect(current_path).to eq(new_party_path)
+    expect(page).to have_content('Gotta fill out all fields. Hard no')
   end
 end

@@ -29,4 +29,18 @@ RSpec.describe 'User registration' do
     expect(page).to have_content('Fields are missing or invalid. Try again')
     expect(current_path).to eq(registration_path)
   end
+
+  it 'errors if password conformation is wrong' do
+    visit registration_path
+
+    fill_in 'user[email]', with: 'rick@thecitadel.com'
+    fill_in 'user[name]', with: 'Rick'
+    fill_in 'user[password]', with: 'SealTeamRicks'
+    fill_in 'user[password_confirmation]', with: 'wrongpassword'
+
+    click_on 'Register'
+
+    expect(page).to have_content('Password and confirmation must match. Try again')
+    expect(current_path).to eq(registration_path)
+  end
 end
