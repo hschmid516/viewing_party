@@ -5,7 +5,7 @@ class PartiesController < ApplicationController
   end
 
   def create
-    party = Party.new(party_params)
+    party = Party.create(party_params)
     if party.save
       party.guests.create(user: current_user, host: true)
       params[:friend_ids].each do |friend_id|
@@ -14,6 +14,7 @@ class PartiesController < ApplicationController
       flash[:notices] = 'Party Created Successfully!'
       redirect_to dashboard_index_path
     else
+      @movie = MovieFacade.movie_details(params[:movie_id])
       flash[:danger] = 'Gotta fill out all fields. Hard no'
       redirect_to new_party_path
     end
@@ -22,6 +23,6 @@ class PartiesController < ApplicationController
   private
 
   def party_params
-    params.permit(:duration, :day, :time, :title)
+    params.permit(:duration, :day, :time, :title, :movie_id)
   end
 end

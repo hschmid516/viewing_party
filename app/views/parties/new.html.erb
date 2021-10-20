@@ -1,14 +1,15 @@
 <h1>Viewing Party Goodness</h1>
 
+<h4><%= @movie.title %></h4>
 <%= form_with url: parties_path, method: :post, local: true do |f| %>
-<%= f.label :title, 'Movie Title' %>
-<%= f.text_field :title, value: @movie.title, readonly: true %>
+<%= f.hidden_field :title, value: @movie.title %>
+<%= f.hidden_field :movie_id, value: @movie.id %>
 <%= f.label :duration, 'Duration' %>
-<%= f.number_field :duration, value: @movie.runtime, min: @movie.runtime %>
+<%= f.number_field :duration, value: @movie.runtime, min: @movie.runtime, required: true %>
 <%= f.label :day, 'Day' %>
-<%= f.date_field :day %>
+<%= f.date_field :day, required: true %>
 <%= f.label :time, 'Time' %>
-<%= f.time_field :time %>
+<%= f.time_field :time, required: true %>
 <%= f.collection_check_boxes(:friend_ids, current_user.friends.all, :id, :name) %>
 <%= f.submit "Create Party" %>
 <% end %>
