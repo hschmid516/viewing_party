@@ -26,7 +26,7 @@ RSpec.describe 'User registration' do
 
     click_on 'Register'
 
-    expect(page).to have_content('Email is taken, or password is invalid. Try again')
+    expect(page).to have_content('Fields are missing or invalid. Try again')
     expect(current_path).to eq(registration_path)
   end
 end
